@@ -20,7 +20,7 @@ custom:
 
 functions:
   getUser:
-    handler: lambdas.getUser.handler
+    handler: lambdas/getUser.handler
     events:
       - http:
           path: get-user/{ID}
