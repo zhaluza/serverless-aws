@@ -23,9 +23,9 @@ functions:
     handler: lambdas.getUser.handler
     events:
       - http:
-        path: get-user/{ID}
-        method: GET
-        cors: true
+          path: get-user/{ID}
+          method: GET
+          cors: true
 
 resources:
   Resources:
