@@ -1,0 +1,23 @@
+{
+  "name": "serverless-full-stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaluza/serverless-aws.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhaluza/serverless-aws/issues"
+  },
+  "homepage": "https://github.com/zhaluza/serverless-aws#readme",
+  "dependencies": {
+    "serverless-s3-sync": "^1.17.1"
+  }
+}
