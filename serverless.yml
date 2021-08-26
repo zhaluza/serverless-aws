@@ -1,6 +1,9 @@
 service: serverless-full-stack
 frameworkVersion: "2"
 
+# This will be the new default starting with v3.0.0
+configValidationMode: error
+
 provider:
   name: aws
   runtime: nodejs12.x
