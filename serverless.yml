@@ -18,8 +18,10 @@ package:
   individually: true
 
 custom:
+  tableName: player-points
+  bucketName: zdummy-sls-bucket
   s3Sync:
-    - bucketName: zdummy-sls-bucket
+    - bucketName: ${self:custom.bucketName}
       localDir: uploadData
 
 functions:
@@ -36,4 +38,15 @@ resources:
     DemoBucketUpload:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: zdummy-sls-bucket
+        BucketName: ${self:custom.bucketName}
+    DynamoDbTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.tableName}
+        AttributeDefinitions:
+          - AttributeName: ID
+            AttributeType: S
+        KeySchema:
+          - AttributeName: ID
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
