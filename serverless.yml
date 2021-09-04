@@ -91,6 +91,18 @@ functions:
           path: create-file/{fileName}
           method: POST
           cors: true
+  proxy:
+    handler: lambdas/endpoints/proxy.handler
+    events:
+      - http:
+          path: cats/{proxy+}
+          method: ANY
+          integration: http-proxy
+          request:
+            uri: https://api.thecatapi.com/{proxy}
+            parameters:
+              paths:
+                proxy: true
 
 resources:
   Resources:
